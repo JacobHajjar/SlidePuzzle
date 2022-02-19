@@ -36,8 +36,6 @@ class BreadthSearch:
           self.frontier_stack.pop(0)
           self.traversed_nodes.append(current_state)
           self.find_possible_states(current_state)
-          #print(self.traversed_nodes[-1])
-          #print(len(self.frontier_stack))     
         print("The path traversed is: " + str(self.traversed_nodes))
 
 
@@ -51,9 +49,9 @@ class BreadthSearch:
         while current_state != self.final_state:
             if self.frontier_stack == []:
                 break
-            current_state =  self.frontier_stack[-1]
+            current_state =  self.frontier_stack[0]
+            self.frontier_stack.pop(0)
             self.traversed_nodes.append(current_state)
-            self.frontier_stack.pop()
             self.find_possible_states(current_state)
         print("The path traversed is: " + str(self.traversed_nodes))
         if self.frontier_stack == []:
