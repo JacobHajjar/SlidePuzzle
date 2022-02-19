@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 '''DFS and BFS to solve sliding puzzle problem'''
+'''comment out the 3d search to see 2d'''
+'''the 3d take a long time to load to give it time'''
 from depth_first_search import DepthSearch
 
 __author__ = 'Jacob Hajjar'
