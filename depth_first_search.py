@@ -1,7 +1,5 @@
 '''solve 2d and 3d array with DFS'''
 
-from sre_parse import State
-
 
 class DepthSearch:
     '''base class for depth search'''
@@ -30,7 +28,6 @@ class DepthSearch:
         current_state = self.initial_state
         self.traversed_nodes.append(current_state)
         self.find_possible_states(current_state) #pushes possible states into frontier stack
-        print(len(self.frontier_stack))
         while current_state != self.final_state:
           if self.frontier_stack == []:
               print("This is not solvable")
@@ -38,9 +35,7 @@ class DepthSearch:
           current_state =  self.frontier_stack[-1]
           self.traversed_nodes.append(current_state)
           self.frontier_stack.pop()
-          self.find_possible_states(current_state)
-          #print(self.traversed_nodes[-1])
-          #print(len(self.frontier_stack))     
+          self.find_possible_states(current_state)    
         print("The path traversed is: " + str(self.traversed_nodes))
 
 
@@ -51,19 +46,13 @@ class DepthSearch:
         current_state = self.initial_state
         self.traversed_nodes.append(current_state)
         self.find_possible_states(current_state) #pushes possible states into frontier stack
-        print(self.final_state)
-        print(current_state)
         while current_state != self.final_state:
-            i = 0
-        #while i < 5:
             if self.frontier_stack == []:
                 break
             current_state =  self.frontier_stack[-1]
             self.traversed_nodes.append(current_state)
             self.frontier_stack.pop()
             self.find_possible_states(current_state)
-            print(len(self.traversed_nodes))
-            i = i + 1
         print("The path traversed is: " + str(self.traversed_nodes))
         if self.frontier_stack == []:
             print("This is not solvable")
@@ -116,7 +105,6 @@ def translate2d_1d(matrix):
     for row in range(dim):
         for col in range(dim):
             one_dim.append(matrix[row][col])
-            #print(str(row) + " " + str(col))
     return one_dim, dim
 
 

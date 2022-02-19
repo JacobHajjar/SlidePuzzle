@@ -3,6 +3,7 @@
 '''comment out the 3d search to see 2d'''
 '''the 3d take a long time to load to give it time'''
 from depth_first_search import DepthSearch
+from breadth_first_search import BreadthSearch
 
 __author__ = 'Jacob Hajjar'
 __email__ = 'hajjarj@csu.fullerton.edu'
@@ -14,10 +15,18 @@ def main():
     search1 = DepthSearch(list_2d)
     search1.depth_search()
 
+    search12 = BreadthSearch(list_2d)
+    search12.breadth_search()
     list_3d = [1, 4, 3, 7, 0, 6, 5, 8, 2]
     #list_3d = [1, 2, 3, 4, 5, 6, 7, 0, 8] #this one is easier to test
     search2 = DepthSearch(list_3d)
     search2.depth_search()
+
+    search22 = BreadthSearch(list_3d)
+    search22.breadth_search()
+    
+    
+
 
 if __name__ == '__main__':
     main()
